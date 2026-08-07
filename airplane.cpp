@@ -8,83 +8,55 @@
  *   给定 n 张牌，求能组成多少种不同的「飞机」（可重集合不同才算不同）。
  *   答案对 998244353 取模。
  *
- * 输入：
- *   第一行 n (1 ≤ n ≤ 2×10^5)
- *   第二行 n 个整数 a_i (1 ≤ a_i ≤ 2×10^5)
- *
  * 解法：
  *   枚举 a（连续三张的起始值），要求 cnt[a]≥3, cnt[a+1]≥3。
- *   对于每对 (b,c) b≤c，检查是否能从 cnt 中取出对应数量的牌。
- *   不同飞机 = 不同的可重集合 = 不同的 (a, b, c) 三元组。
- *
- *   分类计数：
- *     1. b<c, b,c 均 ∉ {a,a+1}: C(|P2|-2, 2)
- *     2. b=a, c∉{a,a+1} 或 c=a, b∉{a,a+1}: 2*(a∈P5)*(|P2|-2)
- *     3. b=a+1, c∉{a,a+1} 或 c=a+1, b∉{a,a+1}: 2*(a+1∈P5)*(|P2|-2)
- *     4. b=a, c=a+1: (a∈P5 && a+1∈P5)
- *     5. b=c∉{a,a+1}: |P4| - [a∈P4] - [a+1∈P4]
- *     6. b=c=a: (a∈P7)
- *     7. b=c=a+1: (a+1∈P7)
+ *   两个 pair 从「能力池」中选取：
+ *     - 能出一个 pair 的值：cnt[v] ≥ 2，但如果 v 是 a 或 a+1 且 cnt[v] 只有 3~4
+ *       （不够同时做 triplet+pair），则需要排除
+ *     - 能出两个 pair 的值（b=c）：cnt[v] ≥ 4，但 v 是 a 或 a+1 时需要 cnt[v] ≥ 7
+ *   C(x1, 2) 从池中选 2 个不同值各出一个 pair，x2 选 1 个值出两个 pair。
  */
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
+using ll = long long;
 
-const int MAXV = 200000;
+const int N = 200020;
 const int MOD = 998244353;
-
-int cnt[MAXV + 5];
+int cnt[N];
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
 
     int n; cin >> n;
-    int maxVal = 0;
-    for (int i = 0; i < n; i++) {
+    int maxn = 0;
+    for (int i = 1; i <= n; i++) {
         int x; cin >> x;
         cnt[x]++;
-        maxVal = max(maxVal, x);
+        maxn = max(maxn, x);
     }
 
-    // 统计满足条件的值的个数
-    int p2 = 0, p4 = 0;  // cnt≥2, cnt≥4
-    for (int v = 1; v <= maxVal; v++) {
-        if (cnt[v] >= 2) p2++;
-        if (cnt[v] >= 4) p4++;
+    // 全局统计：能出 2 张牌 / 能出 4 张牌（两个 pair 同值）的值有几个
+    int f1 = 0, f2 = 0;
+    for (int i = 1; i <= maxn; i++) {
+        if (cnt[i] >= 2) f1++;
+        if (cnt[i] >= 4) f2++;
     }
 
-    long long ans = 0;
+    ll res = 0;
+    for (int i = 1; i < maxn; i++) {
+        if (cnt[i] >= 3 && cnt[i + 1] >= 3) {
+            // 排除不够同时做 triplet+pair 的值
+            // x1: 能出一个 pair 的值（cnt≥2，且如果用在 triplet 位上需要 cnt≥5）
+            int x1 = f1 - (cnt[i] < 5) - (cnt[i + 1] < 5);
+            // x2: 能出两个 pair 同值的值（cnt≥4，且如果用在 triplet 位上需要 cnt≥7）
+            int x2 = f2 - (cnt[i] >= 4 && cnt[i] < 7) - (cnt[i + 1] >= 4 && cnt[i + 1] < 7);
 
-    for (int a = 1; a < maxVal; a++) {
-        if (cnt[a] < 3 || cnt[a + 1] < 3) continue;
-
-        int out2 = p2 - 2;  // 排除 a, a+1 后 cnt≥2 的个数
-        int out4 = p4 - (cnt[a] >= 4) - (cnt[a + 1] >= 4);
-
-        bool p5a = (cnt[a] >= 5);
-        bool p5a1 = (cnt[a + 1] >= 5);
-        bool p7a = (cnt[a] >= 7);
-        bool p7a1 = (cnt[a + 1] >= 7);
-
-        // 情况 1: b<c, b,c ∉ {a,a+1}
-        if (out2 >= 2) {
-            ans += (long long)out2 * (out2 - 1) / 2;
+            res = (res + (ll)x1 * (x1 - 1) / 2 + x2) % MOD;
         }
-        // 情况 2 & 3: 一个 pair 在 triplet 值上
-        if (p5a) ans += 2LL * out2;
-        if (p5a1) ans += 2LL * out2;
-        // 情况 4: b=a, c=a+1
-        if (p5a && p5a1) ans++;
-        // 情况 5: b=c ∉ {a,a+1}
-        ans += out4;
-        // 情况 6 & 7: b=c=a 或 b=c=a+1
-        if (p7a) ans++;
-        if (p7a1) ans++;
-
-        ans %= MOD;
     }
 
-    cout << ans % MOD << '\n';
+    cout << res << '\n';
     return 0;
 }
