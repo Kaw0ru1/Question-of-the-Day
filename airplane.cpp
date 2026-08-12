@@ -1,5 +1,6 @@
 /*
  * 飞机 — 牛客网 NC310831
+ * 链接：https://ac.nowcoder.com/acm/problem/310831
  *
  * 题目描述：
  *   一个「飞机」有恰好 10 张牌：

@@ -1,5 +1,6 @@
 /*
  * 迷宫相遇 — 牛客网 NC23486
+ * 链接：https://ac.nowcoder.com/acm/problem/23486
  *
  * 题目描述：
  *   小A和小B被困在迷宫中，想找到对方。
