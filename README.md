@@ -1,1 +1,23 @@
-just the learning process of an ordinary student.
+# Question of the Day · 每日一题
+
+> 一个普通学生的算法刷题记录 —— 每天一道牛客网题，持续更新。
+
+## 题目总览
+
+| 编号 | 题目 | 难度 | 算法标签 | 题解 | 一句话描述 |
+|------|------|------|----------|------|------------|
+| NC19935 | 通配符匹配 | 较难 | 回溯 · 递归 | [wildcard.cpp](wildcard.cpp) | 判断文件名能否被含 `*` / `?` 的模式串匹配 |
+| NC310831 | 飞机 | 中等 | 组合数学 · 计数 | [airplane.cpp](airplane.cpp) | 统计一副牌能组成多少种「飞机」牌型 |
+| NC23486 | 迷宫相遇 | 中等 | BFS · 最短路 | [maze_meet.cpp](maze_meet.cpp) | 两人不同速度在迷宫中的最早相遇时间 |
+| NC23482 | 缆车观光 | 较难 | LCA · 树上最短路 | [cable_car.cpp](cable_car.cpp) | 树上两点最短路径，可借道一条零代价缆车边 |
+| NC53079 | 最小质因子求和 | 简单 | 数论 · 欧拉线性筛 | [min_prime_factor.cpp](min_prime_factor.cpp) | 求 1~n 每个数最小质因子之和 |
+
+> 点击题解文件名即可查看详细题解与 AC 代码。
+
+## 目录
+
+- [wildcard.cpp](wildcard.cpp) — 通配符匹配（CQOI2014）
+- [airplane.cpp](airplane.cpp) — 飞机（组合计数）
+- [maze_meet.cpp](maze_meet.cpp) — 迷宫相遇（双向 BFS）
+- [cable_car.cpp](cable_car.cpp) — 缆车观光（LCA）
+- [min_prime_factor.cpp](min_prime_factor.cpp) — 最小质因子求和（欧拉筛）
