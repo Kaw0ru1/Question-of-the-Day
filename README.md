@@ -11,6 +11,7 @@
 | NC23486 | 迷宫相遇 | 中等 | BFS · 最短路 | [maze_meet.cpp](maze_meet.cpp) | 两人不同速度在迷宫中的最早相遇时间 |
 | NC23482 | 缆车观光 | 较难 | LCA · 树上最短路 | [cable_car.cpp](cable_car.cpp) | 树上两点最短路径，可借道一条零代价缆车边 |
 | NC53079 | 最小质因子求和 | 简单 | 数论 · 欧拉线性筛 | [min_prime_factor.cpp](min_prime_factor.cpp) | 求 1~n 每个数最小质因子之和 |
+| NC15553 | 数学考试 | 简单 | 前缀和 · 枚举 | [math_exam.cpp](math_exam.cpp) | 选 2 个不重叠的长度 k 区间使分数之和最大 |
 
 > 点击题解文件名即可查看详细题解与 AC 代码。
 
@@ -21,3 +22,4 @@
 - [maze_meet.cpp](maze_meet.cpp) — 迷宫相遇（双向 BFS）
 - [cable_car.cpp](cable_car.cpp) — 缆车观光（LCA）
 - [min_prime_factor.cpp](min_prime_factor.cpp) — 最小质因子求和（欧拉筛）
+- [math_exam.cpp](math_exam.cpp) — 数学考试（前缀和）
