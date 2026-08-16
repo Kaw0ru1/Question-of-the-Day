@@ -12,6 +12,7 @@
 | NC23482 | 缆车观光 | 较难 | LCA · 树上最短路 | [cable_car.cpp](cable_car.cpp) | 树上两点最短路径，可借道一条零代价缆车边 |
 | NC53079 | 最小质因子求和 | 简单 | 数论 · 欧拉线性筛 | [min_prime_factor.cpp](min_prime_factor.cpp) | 求 1~n 每个数最小质因子之和 |
 | NC15553 | 数学考试 | 简单 | 前缀和 · 枚举 | [math_exam.cpp](math_exam.cpp) | 选 2 个不重叠的长度 k 区间使分数之和最大 |
+| NC51003 | Matrix | 中等 | 二维哈希 · 二分查找 | [matrix_match.cpp](matrix_match.cpp) | 判断询问的 A×B 01 子矩阵是否在原矩阵中出现 |
 
 > 点击题解文件名即可查看详细题解与 AC 代码。
 
@@ -23,3 +24,4 @@
 - [cable_car.cpp](cable_car.cpp) — 缆车观光（LCA）
 - [min_prime_factor.cpp](min_prime_factor.cpp) — 最小质因子求和（欧拉筛）
 - [math_exam.cpp](math_exam.cpp) — 数学考试（前缀和）
+- [matrix_match.cpp](matrix_match.cpp) — Matrix（二维哈希）
