@@ -15,6 +15,7 @@
 | NC51003 | Matrix | 中等 | 二维哈希 · 二分查找 | [matrix_match.cpp](matrix_match.cpp) | 判断询问的 A×B 01 子矩阵是否在原矩阵中出现 |
 | NC25737 | 筱玛爱线段树 | 中等 | 树状数组 · 差分 · 倒序 | [xiaoma_segtree.cpp](xiaoma_segtree.cpp) | 倒序求每个操作的执行次数，再差分出最终数组 |
 | NC22618 | 小A与欧拉路 | 中等 | 树的直径 · BFS | [xiaoa_euler.cpp](xiaoa_euler.cpp) | 边可复制任意次求最短欧拉路 = 2×边权和 − 直径 |
+| NC200195 | 区区区间 | 中等 | 线段树 · 懒标记 | [ququ_interval.cpp](ququ_interval.cpp) | 区间替换为等差数列 + 区间求和 |
 
 > 点击题解文件名即可查看详细题解与 AC 代码。
 
@@ -29,3 +30,4 @@
 - [matrix_match.cpp](matrix_match.cpp) — Matrix（二维哈希）
 - [xiaoma_segtree.cpp](xiaoma_segtree.cpp) — 筱玛爱线段树（倒序差分）
 - [xiaoa_euler.cpp](xiaoa_euler.cpp) — 小A与欧拉路（树的直径）
+- [ququ_interval.cpp](ququ_interval.cpp) — 区区区间（线段树）
