@@ -17,6 +17,7 @@
 | NC22618 | 小A与欧拉路 | 中等 | 树的直径 · BFS | [xiaoa_euler.cpp](xiaoa_euler.cpp) | 边可复制任意次求最短欧拉路 = 2×边权和 − 直径 |
 | NC200195 | 区区区间 | 中等 | 线段树 · 懒标记 | [ququ_interval.cpp](ququ_interval.cpp) | 区间替换为等差数列 + 区间求和 |
 | NC20247 | [SCOI2005]骑士精神 | 较难 | IDA* · 迭代加深 | [knight.cpp](knight.cpp) | 5×5 棋盘骑士归位，15 步内最少步数 |
+| NC21579 | 牛牛学括号 | 简单 | 计数 · 组合数学 · 贪心 | [niu_niu_brackets.cpp](niu_niu_brackets.cpp) | 合法括号序列删空的方法总数（乘法原理） |
 
 > 点击题解文件名即可查看详细题解与 AC 代码。
 
@@ -33,3 +34,4 @@
 - [xiaoa_euler.cpp](xiaoa_euler.cpp) — 小A与欧拉路（树的直径）
 - [ququ_interval.cpp](ququ_interval.cpp) — 区区区间（线段树）
 - [knight.cpp](knight.cpp) — [SCOI2005]骑士精神（IDA*）
+- [niu_niu_brackets.cpp](niu_niu_brackets.cpp) — 牛牛学括号（计数）
